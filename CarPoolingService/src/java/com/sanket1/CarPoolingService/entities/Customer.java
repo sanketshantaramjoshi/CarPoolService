@@ -15,20 +15,26 @@ public class Customer {
             String customerGender;
             String customerEmail;
             String customerAddress;
-            String customerDateOfBirth;  
+            String customerDateOfBirth; 
+            String customerPassword;
 
-    public Customer(String customerName, long customerContact, String customerGender, String customerEmail, String customerAddress, String customerDateOfBirth) {
+    
+
+    
+
+    public Customer(String customerName, long customerContact, String customerGender, String customerEmail, String customerAddress, String customerDateOfBirth,String customerPassword) {
         this.customerName = customerName;
         this.customerContact = customerContact;
         this.customerGender = customerGender;
         this.customerEmail = customerEmail;
         this.customerAddress = customerAddress;
         this.customerDateOfBirth = customerDateOfBirth;
+         this.customerPassword = customerPassword;
     }
    
             
 
-    public Customer(int customerID, String customerName, long customerContact, String customerGender, String customerEmail, String customerAddress, String customerDateOfBirth) {
+    public Customer(int customerID, String customerName, long customerContact, String customerGender, String customerEmail, String customerAddress, String customerDateOfBirth,String customerPassword) {
         this.customerID = customerID;
         this.customerName = customerName;
         this.customerContact = customerContact;
@@ -36,6 +42,8 @@ public class Customer {
         this.customerEmail = customerEmail;
         this.customerAddress = customerAddress;
         this.customerDateOfBirth = customerDateOfBirth;
+        this.customerPassword = customerPassword;
+       
     }
 
    
@@ -44,7 +52,7 @@ public class Customer {
         this.customerID = customerID;
     }
 
-    public void setCustomName(String customName) {
+    public void setCustomerName(String customName) {
         this.customerName = customerName;
     }
 
@@ -66,6 +74,10 @@ public class Customer {
 
     public void setCustomerDateOfBirth(String customerDateOfBirth) {
         this.customerDateOfBirth = customerDateOfBirth;
+    }
+    
+     public void setCustomerPassword(String customerPassword) {
+        this.customerPassword =customerPassword;
     }
     
   
@@ -97,6 +109,10 @@ public class Customer {
 
     public String getCustomerDateOfBirth() {
         return customerDateOfBirth;
+    }
+
+   public String getCustomerPassword() {
+        return customerPassword;
     }
 
    

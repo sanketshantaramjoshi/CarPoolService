@@ -24,24 +24,26 @@ public class ApplicationCustomerClass {
 
     public static void main(String[] args){
         CustomerDAO customerDAO = new CustomerDAOImpl();
-       int count;
-       count = customerDAO.addCustomer(new Customer(3,"sunny",1234678900,"male","sunny123@","borivali","09/12/2014"));
-       if(count>0)System.out.println("Record Added Successfully");
-        else System.out.println("Record Failed to get added");
-      //    count=customerDAO.deleteCustomer(2);
-      //  if(count>0)System.out.println("Record Deleted Successfully");
-      //    else System.out.println("Record Failed to get deleted");
+     //  int count;
+//       count = customerDAO.addCustomer(new Customer("Amit",1235578900,"male","Amit123@","borivali","09/12/2014","sanket1244555"));
+//       if(count>0)System.out.println("Record Added Successfully");
+//        else System.out.println("Record Failed to get added");
+//          count=customerDAO.deleteCustomer(2);
+//        if(count>0)System.out.println("Record Deleted Successfully");
+//          else System.out.println("Record Failed to get deleted");
        // Customer customer = new Customer(1,"sanjaya",720897045,"female","sanjaya@gmail.com","borivali","13/12/2014");
         // count=customerDAO.updateCustomer(1, customer);
        // if(count>0)System.out.println("Record Updated Successfully");
        //else System.out.println("Record Failed to get updated");
-       // List<Customer> customerlist = customerDAO.getAllCustomer();
-       // for(Customer cust: customerlist){
-            //System.out.println(cust.getCustomerID()+ "|" + cust.getCustomName()+ "|" + cust.getCustomerContact() + "|" + cust.getCustomerGender()+ "|" + cust.getCustomerEmail()+ "|" + cust.getCustomerAddress() + "|" + cust.getCustomerDateOfBirth());
-      //  }
-       // Customer cust = customerDAO.getCustomerByID(3);
-        //   System.out.println(cust.getCustomerID()+ "|" + cust.getCustomName()+ "|" + cust.getCustomerContact() + "|" + cust.getCustomerGender()+ "|" + cust.getCustomerEmail()+ "|" + cust.getCustomerAddress() + "|" + cust.getCustomerDateOfBirth());
-    
+//        List<Customer> customerlist = customerDAO.getAllCustomer();
+//        for(Customer cust: customerlist){
+//            System.out.println(cust.getCustomerID()+ "|" + cust.getCustomName()+ "|" + cust.getCustomerContact() + "|" + cust.getCustomerGender()+ "|" + cust.getCustomerEmail()+ "|" + cust.getCustomerAddress() + "|" + cust.getCustomerDateOfBirth());
+//        }
+//        Customer cust = customerDAO.getCustomerByID(1);
+//           System.out.println(cust.getCustomerID()+ "|" + cust.getCustomName()+ "|" + cust.getCustomerContact() + "|" + cust.getCustomerGender()+ "|" + cust.getCustomerEmail()+ "|" + cust.getCustomerAddress() + "|" + cust.getCustomerDateOfBirth());
+//    
+       boolean result=customerDAO.isValidate("sanke@","sanket23");
+           
     }
 }
       

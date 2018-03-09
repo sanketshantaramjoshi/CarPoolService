@@ -19,9 +19,9 @@ public class ApplicationCarBookingClass {
      public static void main(String[] args){
         CarBookingDAO carbookingDAO = new CarBookingDAOImpl();
        int count;
-       //count = carbookingDAO.addCarBooking(new CarBooking(2,1002,4,"10/10/2010","12:00:00"));
-      //if(count>0)System.out.println("Record Added Successfully");
-        //else System.out.println("Record Failed to get added");
+       count = carbookingDAO.addCarBooking(new CarBooking(2,1002,4,"10/10/2010","12:00:00"));
+      if(count>0)System.out.println("Record Added Successfully");
+        else System.out.println("Record Failed to get added");
          //count=carbookingDAO.deleteCarBooking(100004);
         //if(count>0)System.out.println("Record Deleted Successfully");
         //else System.out.println("Record Failed to get deleted");
@@ -33,8 +33,8 @@ public class ApplicationCarBookingClass {
         for(CarBooking cr: carbookinglist){
             System.out.println(cr.getCarbookingID()+ "|" + cr.getCarID()+ "|" + cr.getCustomerID()+ "|" + cr.getCarbookingDate()+ "|" + cr.getCarbookingTime());
        }
-       CarBooking cr = carbookingDAO.getCarBookingByID(100005);
-         System.out.println(cr.getCarbookingID()+ "|" + cr.getCarID()+ "|" + cr.getCustomerID()+ "|" + cr.getCarbookingDate()+ "|" + cr.getCarbookingTime());
+//       CarBooking cr = carbookingDAO.getCarBookingByID(100005);
+//         System.out.println(cr.getCarbookingID()+ "|" + cr.getCarID()+ "|" + cr.getCustomerID()+ "|" + cr.getCarbookingDate()+ "|" + cr.getCarbookingTime());
        }
     }
 
