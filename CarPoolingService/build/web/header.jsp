@@ -14,8 +14,34 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
         <title>JSP Page</title>
         <style>
+            .marketing
+            {
+                padding-left: 15px;
+                padding-right: 15px;   
+            }
+            .marketing .col-lg-4
+            {
+                text-align:center;
+                margin-bottom: 20px;
+            }
+            .marketing .col-lg-4 p
+            {
+                margin-left: 10px;
+                margin-right: 10px;
+                
+            }
+            footer
+            {
+               background-color: #000;
+               padding: 50px;
+            }
            .carousel 
            {
                position: relative; 
@@ -53,7 +79,7 @@
   </a>
   
   <!-- Links -->
-  <ul class="navbar-nav">
+  <ul class=" nav navbar-nav">
     <li class="nav-item active">
         <a class="nav-link" href="Home.jsp">Home</a>
     </li>
@@ -83,7 +109,7 @@
    
   <div class="carousel-inner">
     <div class="carousel-item active">  
-        <img src="image4.jpg" alt="image"  height="800px" width="100%">
+        <img src="image1.jpeg" alt="image"  height="600px" width="100%">
       <div class="container">
       <div class="carousel-caption">
     <h1>CarPool</h1>
@@ -94,7 +120,7 @@
     </div>
     </div>
     <div class="carousel-item">
-      <img src="image2.jpg" alt="Chicago" height="800px" width="100%"  >
+      <img src="image2.jpeg" alt="Chicago" height="600px" width="100%"  >
        <div class="container">
       <div class="carousel-caption">
     <h1>CarPool</h1>
@@ -104,11 +130,12 @@
   </div>
     </div>
     </div>
-    </div>
+    
     <div class="carousel-item">
-      <img src="image3.jpg" alt="New York"  height="800px" width="100%" >
+      <img src="image3.jpeg" alt="New York"  height="600px" width="100%"      >
       <div class="carousel-caption">  
     </div>
+  </div>
   </div>
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
@@ -117,11 +144,42 @@
     <span class="carousel-control-next-icon"></span>
   </a>
 </div> 
+        
+        
+        <div class="container-marketing">
+            <div class="row">
+                <div class="col-lg-4">
+                   <img src="image4.jpg" class="rounded-circle" alt="Cinque Terre" width="304" height="236"> 
+                    <p><a class="btn btn-default" href="#">Book your car</a></p>
+                </div>
+            </div>
+            <!-- col-lg-4 -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="image5.jpg" class="rounded-circle" alt="Cinque Terre" width="304" height="236"> 
+                    <p><a class="btn btn-default" href="#">Book your carpoolservice</a></p>
+                </div>
+            </div>
+        </div> 
+        <!-- col-lg-4 -->
+         
+        <footer>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <p class="pull-rigth"><a href="#">Back to top</a></p>
+                        <p>
+                            &COPY; 2018 Transport your company, Inc.
+                            &middot; <a href="Privacy">Privacy</a>
+                            &middot; <a href="Terms and condition">Terms & condition</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+  
+   
 
-  
-  
-  
-</div>
 
     </body>
    
