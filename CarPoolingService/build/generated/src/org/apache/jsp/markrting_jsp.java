@@ -60,7 +60,10 @@ public final class markrting_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<div class=\"container\">\n");
       out.write("  <h2>Rounded Corners</h2>\n");
       out.write("  <p>The .rounded class adds rounded corners to an image:</p>            \n");
-      out.write("  <img src=\"cinqueterre.jpg\" class=\"rounded\" alt=\"Cinque Terre\" width=\"304\" height=\"236\"> \n");
+      out.write("  <img src=\"image1.jpeg\" class=\"rounded-circle\" alt=\"Cinque Terre\" width=\"304\" height=\"236\"> \n");
+      out.write("  <h2>Rounded Corners</h2>\n");
+      out.write("  <p>The .rounded class adds rounded corners to an image:</p>            \n");
+      out.write("  <img src=\"image4.jpeg\" class=\"rounded-circle\" alt=\"Cinque Terre\" width=\"304\" height=\"236\"> \n");
       out.write("</div>\n");
       out.write("\n");
       out.write("</body>\n");

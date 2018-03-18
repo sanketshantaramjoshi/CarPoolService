@@ -24,8 +24,8 @@ public class ApplicationCustomerClass {
 
     public static void main(String[] args){
         CustomerDAO customerDAO = new CustomerDAOImpl();
-     //  int count;
-//       count = customerDAO.addCustomer(new Customer("Amit",1235578900,"male","Amit123@","borivali","09/12/2014","sanket1244555"));
+//       int count;
+//       count = customerDAO.addCustomer(new Customer("sumit",1225578900,"male","sumit123@","borivali","09/12/2014","sanket12455"));
 //       if(count>0)System.out.println("Record Added Successfully");
 //        else System.out.println("Record Failed to get added");
 //          count=customerDAO.deleteCustomer(2);
@@ -42,7 +42,7 @@ public class ApplicationCustomerClass {
 //        Customer cust = customerDAO.getCustomerByID(1);
 //           System.out.println(cust.getCustomerID()+ "|" + cust.getCustomName()+ "|" + cust.getCustomerContact() + "|" + cust.getCustomerGender()+ "|" + cust.getCustomerEmail()+ "|" + cust.getCustomerAddress() + "|" + cust.getCustomerDateOfBirth());
 //    
-       boolean result=customerDAO.isValidate("sanket@","sanket3");
+       boolean resultSet=customerDAO.isUserValid("sanket@","sanket3");
            
     }
 }

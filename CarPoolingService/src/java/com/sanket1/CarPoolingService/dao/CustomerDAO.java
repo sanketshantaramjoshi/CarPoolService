@@ -17,6 +17,6 @@ public interface CustomerDAO {
      int deleteCustomer(int customerID);
      List<Customer> getAllCustomer();
      Customer getCustomerByID (int customerID);
-     boolean isValidate(String customerEmail ,String customerPassword);
+     boolean isUserValid(String customerEmail ,String customerPassword);
      int updateCustomer(int customerID,Customer customer);
 }

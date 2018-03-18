@@ -46,6 +46,10 @@ public class Customer {
        
     }
 
+    public Customer(String customerName, long customerContact, String customerGender, String customerEmail, String customerAddress, String customerDateOfBirth) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
    
 
     public void setCustomerID(int customerID) {
@@ -87,7 +91,7 @@ public class Customer {
         return customerID;
     }
     
-    public String getCustomName() {
+    public String getCustomerName() {
         return customerName;
     }
 

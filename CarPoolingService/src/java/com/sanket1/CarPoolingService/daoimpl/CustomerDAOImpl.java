@@ -30,7 +30,7 @@ public  class CustomerDAOImpl implements CustomerDAO {
             //return addEmployee(employee);
             Connection con = DerbyConnection.getConnection();
             PreparedStatement preparedStatement = con.prepareStatement("insert into Customer(customerName,customerContact,customerGender,customerEmail,customerAddress,customerDateOfBirth,customerPassword) values(?,?,?,?,?,?,?)");
-       preparedStatement.setString(1,customer.getCustomName());
+       preparedStatement.setString(1,customer.getCustomerName());
         preparedStatement.setLong(2,customer.getCustomerContact());
         preparedStatement.setString(3,customer.getCustomerGender());
         preparedStatement.setString(4,customer.getCustomerEmail());
@@ -138,7 +138,7 @@ public  class CustomerDAOImpl implements CustomerDAO {
         try {
             Connection con  = DerbyConnection.getConnection();
             PreparedStatement preparedstatement = con.prepareStatement("update Customer set customerName=?,customerContact=?,customerGender=?,customerEmail=?,customerAddress=?,customerDateOfBirth=? customerPassword=? where customerID=?");
-            preparedstatement.setString(1,customer.getCustomName());
+            preparedstatement.setString(1,customer.getCustomerName());
              preparedstatement.setLong(2,customer.getCustomerContact());
              preparedstatement.setString(3,customer.getCustomerGender());
              preparedstatement.setString(4,customer.getCustomerEmail());
@@ -154,34 +154,30 @@ public  class CustomerDAOImpl implements CustomerDAO {
         return count;
     }
 
-    @Override
-    public boolean isValidate(String customerEmail, String customerPassword) {
    
-    Boolean result=false;
+    @Override
+    public boolean isUserValid(String customerEmail, String customerPassword) {
     try{
-      Connection con = DerbyConnection.getConnection(); 
-    PreparedStatement preparedstatement=con.prepareStatement("select * from Customer where customerEmail IN (?) and customerPassword IN (?)");
-    preparedstatement.setString(1,customerEmail);
-    preparedstatement.setString(2,customerPassword);
-     ResultSet resultSet = preparedstatement.executeQuery();
-      if (!resultSet.next() && resultSet.getRow()==0)
-    {
-     result=false;
-     System.out.println("user details are incorrect");
-     }
-        else
-     {   
-         result=true;
-         System.out.println("user logged in");
-     }
-    }
-    catch (SQLException ex) {
+            Connection con = DerbyConnection.getConnection(); 
+            PreparedStatement preparedStatement = con.prepareStatement("select * from Customer where customerEmail=? and customerPassword=?");
+            preparedStatement.setString(1, customerEmail);
+            preparedStatement.setString(2, customerPassword);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet !=null){
+             return resultSet.next();
+            }
+               
+        }
+        catch (SQLException ex) {
             Logger.getLogger(CustomerDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
-     return result;
-    
+        System.out.println("Not Logging In");
+        return false;
     }
-
     
 }
+    
+
+    
+
     
