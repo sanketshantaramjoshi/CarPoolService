@@ -50,7 +50,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="passwordinput">Password</label>
   <div class="col-md-5">
-    <input id="passwordinput" name="customerPassword" type="Password" placeholder="" class="form-control input-md" required="up">
+    <input id="passwordinput" name="customerPassword" type="Password" placeholder="password" class="form-control input-md" required="">
     <span class="help-block">max 16 characters</span>
   </div>
 </div>

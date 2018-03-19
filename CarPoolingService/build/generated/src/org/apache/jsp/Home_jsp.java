@@ -199,7 +199,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"row\">\n");
       out.write("                <div class=\"col-lg-6\">\n");
       out.write("                   <img src=\"image4.jpg\" class=\"rounded-circle\" alt=\"Cinque Terre\" width=\"304\" height=\"236\"> \n");
-      out.write("                    <p><a class=\"btn btn-default\" href=\"#\">Book your car</a></p>\n");
+      out.write("                    <p><a class=\"btn btn-default\" href=\"SignIn.jsp\">Book your car</a></p>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("         </div>\n");
@@ -208,7 +208,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"row\">\n");
       out.write("                <div class=\"col-lg-6\">\n");
       out.write("                    <img src=\"image2.jpeg\" class=\"rounded-circle\" alt=\"Cinque Terre\" width=\"304\" height=\"236\"> \n");
-      out.write("                    <p><a class=\"btn btn-default\" href=\"#\">Book your carpoolservice</a></p>\n");
+      out.write("                    <p><a class=\"btn btn-default\" href=\"SignUp.jsp\">Book your carpoolservice</a></p>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("        \n");

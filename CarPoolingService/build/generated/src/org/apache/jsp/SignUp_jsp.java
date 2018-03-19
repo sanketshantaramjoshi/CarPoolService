@@ -89,7 +89,7 @@ public final class SignUp_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<div class=\"form-group\">\n");
       out.write("  <label class=\"col-md-4 control-label\" for=\"passwordinput\">Password</label>\n");
       out.write("  <div class=\"col-md-5\">\n");
-      out.write("    <input id=\"passwordinput\" name=\"customerPassword\" type=\"Password\" placeholder=\"\" class=\"form-control input-md\" required=\"up\">\n");
+      out.write("    <input id=\"passwordinput\" name=\"customerPassword\" type=\"Password\" placeholder=\"password\" class=\"form-control input-md\" required=\"\">\n");
       out.write("    <span class=\"help-block\">max 16 characters</span>\n");
       out.write("  </div>\n");
       out.write("</div>\n");
@@ -154,7 +154,7 @@ public final class SignUp_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<div class=\"form-group\">\n");
       out.write("  <label class=\"col-md-4 control-label\" for=\"submit\"></label>\n");
       out.write("  <div class=\"col-md-4\">\n");
-      out.write("    <button id=\"submit\" name=\"submit\" class=\"btn btn-success\">Sing Up</button>\n");
+      out.write("    <button id=\"submit\" name=\"submit\" class=\"btn btn-success\">SignUp</button>\n");
       out.write("  </div>\n");
       out.write("</div>\n");
       out.write("                 <div class=\"container\">\n");

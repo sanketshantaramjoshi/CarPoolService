@@ -35,14 +35,15 @@ public class SignUpServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-                 String customerName;
+             System.out.println("register");
+              String customerName;
             long customerContact;
             String customerGender;
             String customerEmail;
             String customerAddress;
-            String customerDateOfBirth;
+            String customerDateOfBirth; 
             String customerPassword;
+
             customerName = request.getParameter("customerName");
             customerContact = Long.parseLong(request.getParameter("customerContact"));
             customerGender = request.getParameter("custometGender");
@@ -50,11 +51,12 @@ public class SignUpServlet extends HttpServlet {
             customerAddress = request.getParameter("custometAddress");
             customerDateOfBirth = request.getParameter("customerDateOfBirth");
             customerPassword= request.getParameter("custometPassword");
+         
             CustomerDAO customerDAO = new CustomerDAOImpl();
             int count = customerDAO.addCustomer(new Customer(customerName,customerContact,customerGender,customerEmail,customerAddress,customerDateOfBirth,customerPassword));
              RequestDispatcher rd = null;
             if(count>0){
-               rd = request.getRequestDispatcher("Home.jsp");
+               rd = request.getRequestDispatcher("header.jsp");
             }
             else{
                 rd = request.getRequestDispatcher("SignUp.jsp");
