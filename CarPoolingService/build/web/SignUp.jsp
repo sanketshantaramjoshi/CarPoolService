@@ -50,7 +50,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="passwordinput">Password</label>
   <div class="col-md-5">
-    <input id="passwordinput" name="customerPassword" type="Password" placeholder="password" class="form-control input-md" required="">
+    <input id="passwordinput" name="customerPassword" type="Password" placeholder="password" class="form-control input-md" required="userpassword">
     <span class="help-block">max 16 characters</span>
   </div>
 </div>
@@ -77,7 +77,7 @@
   <label class="col-md-4 control-label" for="gender">Gender</label>
   <div class="col-md-4"> 
     <label class="radio-inline" for="gender-0">
-      <input type="radio" name="customerGender" id="gender-0" value="Male" checked="checked">Male</label>
+      <input type="radio" name="customerGender" id="gender-0" value="Male" >Male</label>
       
     <label class="radio-inline" for="gender-1">
       <input type="radio" name="customerGender" id="gender-1" value="Female">Female</label>
@@ -106,7 +106,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="emailId">Email Id</label>  
   <div class="col-md-6">
-  <input id="emailId" name="customerEmail" type="text" placeholder="user@domain.com" class="form-control input-md" required="">
+  <input id="emailId" name="customerEmail" type="text" placeholder="user@domain.com" class="form-control input-md " required="">
     
   </div>
 </div>

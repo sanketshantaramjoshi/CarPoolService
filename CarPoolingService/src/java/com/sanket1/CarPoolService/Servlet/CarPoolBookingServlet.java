@@ -5,13 +5,15 @@
  */
 package com.sanket1.CarPoolService.Servlet;
 
-import com.sanket1.CarPoolingService.dao.CustomerDAO;
-import com.sanket1.CarPoolingService.daoimpl.CustomerDAOImpl;
-import com.sanket1.CarPoolingService.entities.Customer;
+import com.sanket1.CarPoolingService.dao.CarPoolBookingDAO;
+import com.sanket1.CarPoolingService.daoimpl.CarPoolBookingDAOImpl;
+import com.sanket1.CarPoolingService.entities.CarPoolBooking;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +22,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author sanket
  */
-public class SignUpServlet extends HttpServlet {
+@WebServlet(name = "CarPoolBookingServlet", urlPatterns = {"/CarPoolBookingServlet"})
+public class CarPoolBookingServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,33 +38,16 @@ public class SignUpServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-           
-            String customerName;
-            long customerContact;
-            String customerGender;
-            String customerEmail;
-            String customerAddress;
-            String customerDateOfBirth; 
-            String customerPassword;
-
-            customerName = request.getParameter("customerName");
-            customerContact = Long.parseLong(request.getParameter("customerContact"));
-            customerGender = request.getParameter("customerGender");
-            customerEmail = request.getParameter("customerEmail");
-            customerAddress = request.getParameter("customerAddress");
-            customerDateOfBirth = request.getParameter("customerDateOfBirth");
-            customerPassword= request.getParameter("customerPassword");
-         
-            CustomerDAO customerDAO = new CustomerDAOImpl();
-            int count = customerDAO.addCustomer(new Customer(customerName,customerContact,customerGender,customerEmail,customerAddress,customerDateOfBirth,customerPassword));
-             RequestDispatcher rd = null;
-            if(count>0){
-               rd = request.getRequestDispatcher("header.jsp");
-            }
-            else{
-                rd = request.getRequestDispatcher("SignUp.jsp");
-            }
-            rd.forward(request,response);
+            /* TODO output your page here. You may use following sample code. */
+          System.out.println("Hello its a list");
+               CarPoolBookingDAO carpoolbookingDAO = new CarPoolBookingDAOImpl ();
+           List<CarPoolBooking> carpoolbookingList= carpoolbookingDAO.getAllCarPoolBooking();
+            System.out.println("No of Records " + carpoolbookingList.size());
+            if(carpoolbookingList.size()>0){
+                request.setAttribute("carpoolbookingList", carpoolbookingList);
+                RequestDispatcher rd = request.getRequestDispatcher("carpoolbookinglist.jsp");
+                rd.forward(request, response);
+        }
         }
     }
 

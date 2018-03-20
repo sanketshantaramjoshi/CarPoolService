@@ -89,7 +89,7 @@ public final class SignUp_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<div class=\"form-group\">\n");
       out.write("  <label class=\"col-md-4 control-label\" for=\"passwordinput\">Password</label>\n");
       out.write("  <div class=\"col-md-5\">\n");
-      out.write("    <input id=\"passwordinput\" name=\"customerPassword\" type=\"Password\" placeholder=\"password\" class=\"form-control input-md\" required=\"\">\n");
+      out.write("    <input id=\"passwordinput\" name=\"customerPassword\" type=\"Password\" placeholder=\"password\" class=\"form-control input-md\" required=\"userpassword\">\n");
       out.write("    <span class=\"help-block\">max 16 characters</span>\n");
       out.write("  </div>\n");
       out.write("</div>\n");
@@ -116,7 +116,7 @@ public final class SignUp_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  <label class=\"col-md-4 control-label\" for=\"gender\">Gender</label>\n");
       out.write("  <div class=\"col-md-4\"> \n");
       out.write("    <label class=\"radio-inline\" for=\"gender-0\">\n");
-      out.write("      <input type=\"radio\" name=\"customerGender\" id=\"gender-0\" value=\"Male\" checked=\"checked\">Male</label>\n");
+      out.write("      <input type=\"radio\" name=\"customerGender\" id=\"gender-0\" value=\"Male\" >Male</label>\n");
       out.write("      \n");
       out.write("    <label class=\"radio-inline\" for=\"gender-1\">\n");
       out.write("      <input type=\"radio\" name=\"customerGender\" id=\"gender-1\" value=\"Female\">Female</label>\n");
