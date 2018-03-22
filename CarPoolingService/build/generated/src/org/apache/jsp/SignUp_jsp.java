@@ -145,7 +145,7 @@ public final class SignUp_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<div class=\"form-group\">\n");
       out.write("  <label class=\"col-md-4 control-label\" for=\"emailId\">Email Id</label>  \n");
       out.write("  <div class=\"col-md-6\">\n");
-      out.write("  <input id=\"emailId\" name=\"customerEmail\" type=\"text\" placeholder=\"user@domain.com\" class=\"form-control input-md\" required=\"\">\n");
+      out.write("  <input id=\"emailId\" name=\"customerEmail\" type=\"text\" placeholder=\"user@domain.com\" class=\"form-control input-md \" required=\"\">\n");
       out.write("    \n");
       out.write("  </div>\n");
       out.write("</div>\n");

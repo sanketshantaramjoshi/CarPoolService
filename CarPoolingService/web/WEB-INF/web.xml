@@ -8,6 +8,14 @@
         <servlet-name>SignUpServlet</servlet-name>
         <servlet-class>com.sanket1.CarPoolService.Servlet.SignUpServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CarServlet</servlet-name>
+        <servlet-class>com.sanket1.CarPoolService.Servlet.CarServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RouteServlet</servlet-name>
+        <servlet-class>com.sanket1.CarPoolService.Servlet.RouteServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SignInServlet</servlet-name>
         <url-pattern>/SignIn.do</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>SignUpServlet</servlet-name>
         <url-pattern>/SignUp.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarServlet</servlet-name>
+        <url-pattern>/Car.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RouteServlet</servlet-name>
+        <url-pattern>/route.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

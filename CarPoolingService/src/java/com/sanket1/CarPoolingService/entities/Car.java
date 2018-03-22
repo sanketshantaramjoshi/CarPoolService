@@ -11,12 +11,12 @@ package com.sanket1.CarPoolingService.entities;
  */
 public class Car {
     int carID;
-    int carNo;
+    String carNo;
     String carModel;
     String carAC;
     int carSeating;
 
-    public Car(int carID, int carNo, String carModel, String carAC, int carSeating) {
+    public Car(int carID, String carNo, String carModel, String carAC, int carSeating) {
         this.carID = carID;
         this.carNo = carNo;
         this.carModel = carModel;
@@ -24,11 +24,18 @@ public class Car {
         this.carSeating = carSeating;
     }
 
+    public Car(String carNo, String carModel, String carAC, int carSeating) {
+     this.carNo = carNo;
+        this.carModel = carModel;
+        this.carAC = carAC;
+        this.carSeating = carSeating;
+    }
+    
     public void setCarid(int carid) {
         this.carID = carID;
     }
 
-    public void setCarNo(int carNo) {
+    public void setCarNo(String carNo) {
         this.carNo = carNo;
     }
 
@@ -48,7 +55,7 @@ public class Car {
         return carID;
     }
 
-    public int getCarNo() {
+    public String getCarNo() {
         return carNo;
     }
 
