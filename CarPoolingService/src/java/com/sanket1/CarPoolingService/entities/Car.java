@@ -30,6 +30,10 @@ public class Car {
         this.carAC = carAC;
         this.carSeating = carSeating;
     }
+
+    public Car(int carNo, String carModel, String carAC, int carSeating) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public void setCarid(int carid) {
         this.carID = carID;

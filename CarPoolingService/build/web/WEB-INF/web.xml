@@ -9,12 +9,24 @@
         <servlet-class>com.sanket1.CarPoolService.Servlet.SignUpServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>RouteServlet</servlet-name>
+        <servlet-class>com.sanket1.CarPoolService.Servlet.RouteServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>CarServlet</servlet-name>
         <servlet-class>com.sanket1.CarPoolService.Servlet.CarServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>RouteServlet</servlet-name>
-        <servlet-class>com.sanket1.CarPoolService.Servlet.RouteServlet</servlet-class>
+        <servlet-name>PickUpServlet</servlet-name>
+        <servlet-class>com.sanket1.CarPoolService.Servlet.PickUpServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CustomerListServlet</servlet-name>
+        <servlet-class>com.sanket1.CarPoolService.Servlet.CustomerListServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditCustomerServlet</servlet-name>
+        <servlet-class>com.sanket1.CarPoolService.Servlet.EditCustomerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SignInServlet</servlet-name>
@@ -25,12 +37,24 @@
         <url-pattern>/SignUp.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>RouteServlet</servlet-name>
+        <url-pattern>/route.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>CarServlet</servlet-name>
         <url-pattern>/Car.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>RouteServlet</servlet-name>
-        <url-pattern>/route.do</url-pattern>
+        <servlet-name>PickUpServlet</servlet-name>
+        <url-pattern>/PickUp.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CustomerListServlet</servlet-name>
+        <url-pattern>/CustomerList.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditCustomerServlet</servlet-name>
+        <url-pattern>/EditCustomer.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
