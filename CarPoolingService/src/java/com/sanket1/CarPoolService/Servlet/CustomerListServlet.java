@@ -37,17 +37,20 @@ public class CustomerListServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-          CustomerDAO customerDAO = new CustomerDAOImpl ();
+           CustomerDAO customerDAO = new CustomerDAOImpl ();
             List<Customer> customerList = customerDAO.getAllCustomer();
             System.out.println("No of Records " + customerList.size());
-            if(customerList.size()>0){
-                request.setAttribute("customerList", customerList);
-                System.out.println("No of records " + customerList.size());
+            if(customerList.size()>0)
+            {   request.setAttribute("customerList", customerList);
+               
                 RequestDispatcher rd = request.getRequestDispatcher("customerlist.jsp");
                 rd.forward(request, response);
+                System.out.println("Done");
+        }
+    
         }
     }
-    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -87,4 +90,4 @@ public class CustomerListServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    }
+}

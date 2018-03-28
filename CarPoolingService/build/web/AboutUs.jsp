@@ -13,7 +13,7 @@
     </head>
     <body>
        <%@include file="header.jsp" %>
-       <h1>hiiii it is About us</h1>
+       <h1>Hiiii it is About us</h1>
        <%@include file="Footer.jsp" %>
     </body>
 </html>

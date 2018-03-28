@@ -5,11 +5,12 @@
  */
 package com.sanket1.CarPoolService.Servlet;
 
-import com.sanket1.CarPoolingService.dao.CarDAO;
-import com.sanket1.CarPoolingService.daoimpl.CarDAOImpl;
-import com.sanket1.CarPoolingService.entities.Car;
+import com.sanket1.CarPoolingService.dao.CarPoolBookingDAO;
+import com.sanket1.CarPoolingService.daoimpl.CarPoolBookingDAOImpl;
+import com.sanket1.CarPoolingService.entities.CarPoolBooking;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author sanket
  */
-public class CarServlet extends HttpServlet {
+public class CarPoolBookingListServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,29 +37,18 @@ public class CarServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-             String carNo;
-           String carModel;
-           String carAC;
-           int carSeating;
-            carNo = request.getParameter("carNo");
-            carModel = request.getParameter("carModel");
-            carAC=request.getParameter("carAC");
-             carSeating=Integer.parseInt(request.getParameter("carSeating"));
-       CarDAO carDAO = new CarDAOImpl();
-                  int count = carDAO.addCar(new Car(carNo,carModel,carAC,carSeating));
-                  RequestDispatcher rd =null;
-                  if (count>0) 
-                  {
-                      rd=request.getRequestDispatcher("Home.jsp");
-                  }
-                  else
-                  {
-                      
-                      rd=request.getRequestDispatcher("Car.jsp");
-                  } 
-               rd.forward(request, response);
+              System.out.println("Hello its a car pool list");
+               CarPoolBookingDAO carpoolbookingDAO = new CarPoolBookingDAOImpl ();
+           List<CarPoolBooking> carpoolbookingList= carpoolbookingDAO.getAllCarPoolBooking();
+            System.out.println("No of Records " + carpoolbookingList.size());
+            if(carpoolbookingList.size()>0){
+                request.setAttribute("carpoolbookingList", carpoolbookingList);
+                RequestDispatcher rd = request.getRequestDispatcher("carpoolbookinglist.jsp");
+                rd.forward(request, response);
         }
-    }
+        }
+        
+            }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

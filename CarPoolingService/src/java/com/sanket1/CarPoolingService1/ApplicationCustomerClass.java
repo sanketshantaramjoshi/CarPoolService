@@ -42,7 +42,7 @@ public class ApplicationCustomerClass {
 //        Customer cust = customerDAO.getCustomerByID(1);
 //           System.out.println(cust.getCustomerID()+ "|" + cust.getCustomName()+ "|" + cust.getCustomerContact() + "|" + cust.getCustomerGender()+ "|" + cust.getCustomerEmail()+ "|" + cust.getCustomerAddress() + "|" + cust.getCustomerDateOfBirth());
 //    
-       boolean resultSet=customerDAO.isUserValid("sanket@","sanket3");
+       boolean resultSet=customerDAO.isUserValid("aman@","aman13");
            
     }
 }

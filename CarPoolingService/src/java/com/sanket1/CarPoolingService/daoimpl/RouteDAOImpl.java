@@ -28,7 +28,7 @@ public class RouteDAOImpl implements RouteDAO {
         try {
             //return addEmployee(employee);
             Connection con = DerbyConnection.getConnection();
-            PreparedStatement preparedStatement = con.prepareStatement("insert into Route(startLocation,destination,distance) values(?,?,?)");
+            PreparedStatement preparedStatement = con.prepareStatement("insert into Route(startLocation,Destination,Distance) values(?,?,?)");
             preparedStatement.setString(1,route.getStartLocation());
             preparedStatement.setString(2,route.getDestination());
             preparedStatement.setInt(3,route.getDistance());
@@ -71,9 +71,9 @@ public class RouteDAOImpl implements RouteDAO {
                 while(resultSet.next()){
                     int routeID=resultSet.getInt(1);
                     String startLocation= resultSet.getString(2);
-                     String destination= resultSet.getString(3);
-                    int distance = resultSet.getInt(4);
-                    Route route = new Route(routeID,startLocation,destination,distance);
+                     String Destination= resultSet.getString(3);
+                    int Distance = resultSet.getInt(4);
+                    Route route = new Route(routeID,startLocation,Destination,Distance);
                     routeList.add(route);
                 }
             }
@@ -99,10 +99,10 @@ public class RouteDAOImpl implements RouteDAO {
                 while(resultSet.next()){
                  int routeId=resultSet.getInt(1);
                     String startLocation= resultSet.getString(2);
-                     String destination= resultSet.getString(3);
-                    int distance = resultSet.getInt(4);
+                     String Destination= resultSet.getString(3);
+                    int Distance = resultSet.getInt(4);
                    
-                    Route route = new Route(routeID,startLocation,destination,distance);
+                    Route route = new Route(routeID,startLocation,Destination,Distance);
                     routeList.add(route);
 
                 }
@@ -129,7 +129,7 @@ public class RouteDAOImpl implements RouteDAO {
             preparedStatement.setString(1,route.getStartLocation());
             preparedStatement.setString(2,route.getDestination());
             preparedStatement.setInt(3,route.getDistance());
-                  preparedStatement.setInt(4,route.getRouteID());
+                  preparedStatement.setInt(4,routeID);
             count = preparedStatement.executeUpdate();
             
         } catch (SQLException ex) {

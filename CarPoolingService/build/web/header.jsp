@@ -10,147 +10,159 @@
     <head>
         <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- <script src="js/jquery-2.1.1.min.js"></script>
-         <script src="js/bootstrap.min.js"></script>
-        <title>JSP Page</title>
-        <style>
-         .navbar-wrapper
-          {
-              position: relative;
-              z-index: 15;
-          }
-          .navbar .nav > li > a
-          {
-              color: #000;
-              text-shadow:none;
-          }
-          .navbar .nav > li > a:hover
-          {
-              color:#000;
-              background: none;
-          }
-          .navbar .nav .active > a
-          {
-              color: #000;
-              background: none;
-          }
-          .navbar .nav .active > a:hover
-          {
-          background: none
-          }
-          .navbar-wrapper
-          {
-              margin-top:20px;
-          }
-            .navbar-wrapper .navbar
-            {
-                border-radius: 4px;
-            }
-        
-           .carousel-inner img {
-      width: 100%;
-      height: 500px;  }
-             .carousel
-            {
-                margin-bottom: 60px;
-                margin-top: 90px;
-            }
-            .carousel-caption
-            {
-                z-index: 10;
-            }
-            .carousel .item
-            {
-                height: 50px;
-                background-color: #777;
-            }
-            .carousel-inner > .item > img
-            {
-                position: absolute;
-                top: 0;
-                left:0;
-                min-width: 100%;
-                height: 500px;
-            }
-            .carousel-caption p
-            {
-             margin-bottom: 20px;
-             font-size: 21px;
-             line-height: 1.4;
-       
-        
-       </style>
-    </head> 
-    <body>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      font: 400 15px/1.8 Lato, sans-serif;
+      color: #777;
+  }
+  h3, h4 {
+      margin: 10px 0 30px 0;
+      letter-spacing: 10px;      
+      font-size: 20px;
+      color: #111;
+  }
+  .container {
+      padding: 80px 120px;
+  }
+  .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+  }
+  .person:hover {
+      border-color: #f1f1f1;
+  }
  
-         <div class="container">
-    <NAVBAR>
-        <div class="navbar-wrapper">
-            <div class="navbar navbar-inverse navbar-static-top">
-                <div class="container">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
-                    <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                        <span class="icon-bar"></span></button>
-                        <a class="navbar-brand" href="#">Cars</a>
-                </div>
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                           <li class="active">
-                             <a href="Home.jsp">Home</a>
-                           </li>
-                           <li class="active">
-                             <a href="AboutUs.jsp">AboutUs</a>
-                           </li>
-                           <li class="active">
-                             <a href="ContactUs">ContactUs</a>
-                           </li>
-                           <li class="active">
-                             <a href="Information.jsp">Information</a>
-                           </li>
-                            </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-         </div> 
-        
-    </NAVBAR>
-             <div id="myCarousel" class="carousel slide" >
-  <ol class="carousel-indicators">
-    <li class="active" data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="image1.jpeg" alt="Los Angeles" width="1100" height="500">
-      <div class="carousel-caption">
-        <h3>Los Angeles</h3>
-        <p>We had such a great time in LA!</p>
-      </div>   
+  .carousel-caption h3 {
+      color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+      background: #2d2d30;
+      color: #bdbdbd;
+  }
+  .bg-1 h3 {color: #fff;}
+  .bg-1 p {font-style: italic;}
+  .list-group-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+  }
+ 
+  .btn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;
+  }
+  .modal-header, h4, .close {
+      background-color: #333;
+      color: #fff !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-header, .modal-body {
+      padding: 40px 50px;
+  }
+  .nav-tabs li a {
+      color: #777;
+  }
+ 
+  .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #2d2d30;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+      opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+      color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+      color: #fff !important;
+  }
+  .navbar-nav li.active a {
+      color: #fff !important;
+      background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+  .open .dropdown-toggle {
+      color: #fff;
+      background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+      color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+      background-color: red !important;
+  }
+ 
+  textarea {
+      resize: none;
+  }
+ 
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+        <a class="navbar-brand" href="Home.jsp" ><img src="Images/carpoollogo.png" alt="logo" style="width:40px;"></a>
     </div>
-    <div class="carousel-item">
-      <img src="image2.jpeg" alt="Chicago" width="1100" height="500">
-      <div class="carousel-caption">
-        <h3>Chicago</h3>
-        <p>Thank you, Chicago!</p>
-      </div>   
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Home.jsp">HOME</a></li>
+        <li><a href="ContactUs.jsp">CONTACT US</a></li>
+        <li><a href="AboutUs.jsp">ABOUT US</a></li>
+        <li><a href="Information.jsp">INFORMATION</a></li>
+            <li class="dropdown">
+        <a class ="dropdown-toggle" data-toggle="dropdown" href="#">MORE
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="CarListServlet.view">Car List</a>
+                <li><a href="CarBookingListServlet.view">Car Booking List</a>
+                <li><a href="CarPoolBookingListServlet.view">Car pool Booking List</a>
+                <li><a href="CarPoolRouteListServlet.view">Car Pool Route List</a>
+                <li><a href="CustomerListServlet.view">Customer List</a>
+                <li><a href="PickUpListServlet.view">PickUp List</a>
+                <li><a href="RouteListServlet.view">Route List</a>
+            </ul>
+    </li>
+         
+        <li><a href="Search.jsp"><span class="glyphicon glyphicon-search"></span></a></li>
+      </ul>
     </div>
-  
   </div>
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div>
+</nav>
     </body>
-   
 </html>

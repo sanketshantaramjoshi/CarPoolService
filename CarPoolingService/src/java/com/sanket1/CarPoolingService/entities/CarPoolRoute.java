@@ -15,6 +15,43 @@ public class CarPoolRoute {
     int passengerCapacity;
     int price;
 
+    public CarPoolRoute(int passengerCapacity, int price) {
+        this.passengerCapacity = passengerCapacity;
+        this.price = price;
+    }
+
+    public int getCarpoolrouteID() {
+        return carpoolrouteID;
+    }
+
+    public void setCarpoolrouteID(int carpoolrouteID) {
+        this.carpoolrouteID = carpoolrouteID;
+    }
+
+    public int getRouteID() {
+        return routeID;
+    }
+
+    public void setRouteID(int routeID) {
+        this.routeID = routeID;
+    }
+
+    public int getPassengerCapacity() {
+        return passengerCapacity;
+    }
+
+    public void setPassengerCapacity(int passengerCapacity) {
+        this.passengerCapacity = passengerCapacity;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public CarPoolRoute(int carpoolrouteID, int routeID, int passengerCapacity, int price) {
         this.carpoolrouteID = carpoolrouteID;
         this.routeID = routeID;
@@ -22,35 +59,5 @@ public class CarPoolRoute {
         this.price = price;
     }
 
-    public void setCarPoolID(int carPoolID) {
-        this.carpoolrouteID = carpoolrouteID;
-    }
-
-    public void setRouteID(int routeID) {
-        this.routeID = routeID;
-    }
-
-    public void setPassengerCapacity(int passengerCapacity) {
-        this.passengerCapacity = passengerCapacity;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getCarPoolrouteID() {
-        return carpoolrouteID;
-    }
-
-    public int getRouteID() {
-        return routeID;
-    }
-
-    public int getPassengerCapacity() {
-        return passengerCapacity;
-    }
-
-    public int getPrice() {
-        return price;
-    }
+    
 }

@@ -11,7 +11,7 @@ import java.util.Date;
 public class Customer {
             int customerID  ;
             String customerName;
-            long customerContact;
+            String customerContact;
             String customerGender;
             String customerEmail;
             String customerAddress;
@@ -22,19 +22,20 @@ public class Customer {
 
     
 
-    public Customer(String customerName, long customerContact, String customerGender, String customerEmail, String customerAddress, String customerDateOfBirth,String customerPassword) {
+    public Customer(String customerName,String customerContact, String customerGender, String customerEmail, String customerAddress, String customerDateOfBirth,String customerPassword) {
         this.customerName = customerName;
         this.customerContact = customerContact;
         this.customerGender = customerGender;
         this.customerEmail = customerEmail;
         this.customerAddress = customerAddress;
         this.customerDateOfBirth = customerDateOfBirth;
+        System.out.println("Date of Birth---- " +customerDateOfBirth);
          this.customerPassword = customerPassword;
     }
    
             
 
-    public Customer(int customerID, String customerName, long customerContact, String customerGender, String customerEmail, String customerAddress, String customerDateOfBirth,String customerPassword) {
+    public Customer(int customerID, String customerName, String customerContact, String customerGender, String customerEmail, String customerAddress, String customerDateOfBirth,String customerPassword) {
         this.customerID = customerID;
         this.customerName = customerName;
         this.customerContact = customerContact;
@@ -46,9 +47,10 @@ public class Customer {
        
     }
 
-    public Customer(String customerName, long customerContact, String customerGender, String customerEmail, String customerAddress, String customerDateOfBirth) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
+  
+
+   
 
    
 
@@ -60,7 +62,7 @@ public class Customer {
         this.customerName = customerName;
     }
 
-    public void setCustomerContact(long customerContact) {
+    public void setCustomerContact(String customerContact) {
         this.customerContact = customerContact;
     }
     
@@ -95,7 +97,7 @@ public class Customer {
         return customerName;
     }
 
-  public long getCustomerContact() {
+  public String getCustomerContact() {
         return customerContact;
     }
 

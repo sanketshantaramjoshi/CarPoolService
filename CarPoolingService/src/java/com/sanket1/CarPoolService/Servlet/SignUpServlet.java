@@ -37,7 +37,7 @@ public class SignUpServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
            
             String customerName;
-            long customerContact;
+            String customerContact;
             String customerGender;
             String customerEmail;
             String customerAddress;
@@ -45,7 +45,7 @@ public class SignUpServlet extends HttpServlet {
             String customerPassword;
 
             customerName = request.getParameter("customerName");
-            customerContact = Long.parseLong(request.getParameter("customerContact"));
+            customerContact =request.getParameter("customerContact");
             customerGender = request.getParameter("customerGender");
             customerEmail = request.getParameter("customerEmail");
             customerAddress = request.getParameter("customerAddress");
@@ -56,7 +56,7 @@ public class SignUpServlet extends HttpServlet {
             int count = customerDAO.addCustomer(new Customer(customerName,customerContact,customerGender,customerEmail,customerAddress,customerDateOfBirth,customerPassword));
              RequestDispatcher rd = null;
             if(count>0){
-               rd = request.getRequestDispatcher("header.jsp");
+               rd = request.getRequestDispatcher("Home.jsp");
             }
             else{
                 rd = request.getRequestDispatcher("SignUp.jsp");

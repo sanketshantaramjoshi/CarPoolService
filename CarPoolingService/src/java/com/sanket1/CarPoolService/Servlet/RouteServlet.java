@@ -36,7 +36,7 @@ public class RouteServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            System.out.println("Route");
+             System.out.println("Route");
             String startLocation;
             String Destination;
             int Distance;
@@ -53,7 +53,7 @@ public class RouteServlet extends HttpServlet {
                   else
                   {
                       
-                      rd=request.getRequestDispatcher("Car.jsp");
+                      rd=request.getRequestDispatcher("Route.jsp");
                   } 
                rd.forward(request, response);
         }

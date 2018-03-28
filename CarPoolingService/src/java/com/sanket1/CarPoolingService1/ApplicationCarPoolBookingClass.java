@@ -18,9 +18,9 @@ public class ApplicationCarPoolBookingClass {
     public static void main(String[] args){
   CarPoolBookingDAO carpoolbookingDAO = new CarPoolBookingDAOImpl();
       int count;
-     //  count = carpoolbookingDAO.addCarPoolBooking(new CarPoolBooking(101,"10/10/2015",1003,0001,"10/10/2015","10:00:00",3,1003,5));
-   // if(count>0)System.out.println("Record Added Successfully");
-    //  else System.out.println("Record Failed to get added");
+       count = carpoolbookingDAO.addCarPoolBooking(new CarPoolBooking(102,"10/10/2015",1000,0001,"10/10/2015","10:00:00",14,10000,5));
+    if(count>0)System.out.println("Record Added Successfully");
+      else System.out.println("Record Failed to get added");
       
       
       
@@ -28,11 +28,11 @@ public class ApplicationCarPoolBookingClass {
     //if(count>0)System.out.println("Record delete Successfully");
     //else System.out.println("Record Failed to get delete");
      
-     CarPoolBooking carpoolbooking = new CarPoolBooking(10,"12/11/2015",1003,0005,"11/11/2016","8:00",3,1003,10);
-     count=carpoolbookingDAO.updateCarPoolBooking(0005, carpoolbooking);
-      if(count>0)System.out.println("Record Updated Successfully");
-      else System.out.println("Record Failed to get updated");
-       
+//     CarPoolBooking carpoolbooking = new CarPoolBooking(10,"12/11/2015",1003,0005,"11/11/2016","8:00",3,1003,10);
+//     count=carpoolbookingDAO.updateCarPoolBooking(0005, carpoolbooking);
+//      if(count>0)System.out.println("Record Updated Successfully");
+//      else System.out.println("Record Failed to get updated");
+//       
        
       //  List<CarPoolBooking> carpoolbookinglist = carpoolbookingDAO.getAllCarPoolBooking();
         //for(CarPoolBooking cpb: carpoolbookinglist){

@@ -209,8 +209,7 @@ public final class editcustomer_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("<p>\n");
       out.write("<form action=\"EditCustomer.do\" method=\"get\">\n");
-      out.write("<!--            Employee ID :<input type=\"text\" name=\"employeeid\" />\n");
-      out.write("            <br/>-->\n");
+      out.write("\n");
 
 Customer customer = new CustomerDAOImpl().getCustomerByID(Integer.parseInt(request.getParameter("customerID")));
 request.setAttribute("customer",customer);

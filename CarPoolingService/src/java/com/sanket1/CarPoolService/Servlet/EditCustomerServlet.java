@@ -36,29 +36,30 @@ public class EditCustomerServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            int customerID;
+                int customerID;
+           
             String action = request.getParameter("action");
             
-             customerID = Integer.parseInt(request.getParameter("customerID"));
+            customerID = Integer.parseInt(request.getParameter("customerID").trim());
+            System.out.println("List Of Customers");
             CustomerDAO customerDAO = new CustomerDAOImpl();
             int count = 0;
             if(action.equals("Save Changes")){
             String customerName;
-            long customerContact;
+            String customerContact;
             String customerGender;
             String customerEmail;
             String customerAddress;
-            String customerDateOfBirth; 
-            String customerPassword;  
-              customerName = request.getParameter("customerName");
-              customerContact =Long.parseLong(request.getParameter("customerContact"));
-              customerGender = request.getParameter("customerGender");
-              customerEmail = request.getParameter("customerEmail");
-              customerAddress = request.getParameter("customerAddress");
-              customerDateOfBirth = request.getParameter("customerDateOfBirth");
-              customerPassword = request.getParameter("customerPasword");
-              System.out.println("success");
-                
+            String customerDateOfBirth;  
+            String customerPassword;   
+               customerName = request.getParameter("customerName");
+               customerContact = request.getParameter("customerContact");
+               customerGender = request.getParameter("customerGender");
+               customerEmail = request.getParameter("customerEmail");
+               customerAddress = request.getParameter("customerAddress");
+               customerDateOfBirth = request.getParameter("customerDateOfBirth");
+               customerPassword = request.getParameter("customerPassword");
+                System.out.println("date ofbirth" +customerDateOfBirth);
                 count = customerDAO.updateCustomer(customerID,new Customer(customerName,customerContact,customerGender,customerEmail,customerAddress,customerDateOfBirth,customerPassword));
                 }
             else if(action.equals("Delete")){
@@ -66,15 +67,16 @@ public class EditCustomerServlet extends HttpServlet {
             }
              RequestDispatcher rd = null;
             if(count>0){
-               rd = request.getRequestDispatcher("customerlist.view");
+               rd = request.getRequestDispatcher("CustomerListServlet.view");
             }
             else{
-                rd = request.getRequestDispatcher("editcustomer.jsp?customerID="+customerID);
+                rd = request.getRequestDispatcher("customerlist.jsp?custID="+customerID);
             }
             rd.include(request,response);
+            
         }
-    
     }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

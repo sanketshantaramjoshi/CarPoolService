@@ -19,7 +19,7 @@ public class ApplicationCarBookingClass {
      public static void main(String[] args){
         CarBookingDAO carbookingDAO = new CarBookingDAOImpl();
        int count;
-       count = carbookingDAO.addCarBooking(new CarBooking(1001,1,"10/10/2010","12:00:00"));
+       count = carbookingDAO.addCarBooking(new CarBooking(1000,1,"10/10/2010","12:00:00"));
       if(count>0)System.out.println("Record Added Successfully");
         else System.out.println("Record Failed to get added");
          //count=carbookingDAO.deleteCarBooking(100004);

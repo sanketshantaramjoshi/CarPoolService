@@ -13,7 +13,6 @@ import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,7 +21,6 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author sanket
  */
-@WebServlet(name = "CarBookingListServlet", urlPatterns = {"/CarBookingListServlet"})
 public class CarBookingListServlet extends HttpServlet {
 
     /**
@@ -39,17 +37,20 @@ public class CarBookingListServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-             System.out.println("Hello its a list");
+           System.out.println("Hello its a list");
                CarBookingDAO carbookingDAO = new CarBookingDAOImpl ();
            List<CarBooking> carbookingList= carbookingDAO.getAllCarBooking();
-            System.out.println("No of Records " + carbookingList.size());
+           
             if(carbookingList.size()>0){
                 request.setAttribute("carbookingList", carbookingList);
                 RequestDispatcher rd = request.getRequestDispatcher("carbookinglist.jsp");
                 rd.forward(request, response);
+                 System.out.println("No of Records " + carbookingList.size());
         }
-    }
-    }
+        }
+        
+            }
+        
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

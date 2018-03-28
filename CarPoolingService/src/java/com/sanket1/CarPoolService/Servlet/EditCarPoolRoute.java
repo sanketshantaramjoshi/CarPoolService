@@ -5,15 +5,13 @@
  */
 package com.sanket1.CarPoolService.Servlet;
 
-import com.sanket1.CarPoolingService.dao.CarPoolBookingDAO;
-import com.sanket1.CarPoolingService.daoimpl.CarPoolBookingDAOImpl;
-import com.sanket1.CarPoolingService.entities.CarPoolBooking;
+import com.sanket1.CarPoolingService.dao.CarPoolRouteDAO;
+import com.sanket1.CarPoolingService.daoimpl.CarPoolRouteDAOImpl;
+import com.sanket1.CarPoolingService.entities.CarPoolRoute;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,8 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author sanket
  */
-@WebServlet(name = "CarPoolBookingServlet", urlPatterns = {"/CarPoolBookingServlet"})
-public class CarPoolBookingServlet extends HttpServlet {
+public class EditCarPoolRoute extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,15 +36,32 @@ public class CarPoolBookingServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-          System.out.println("Hello its a list");
-               CarPoolBookingDAO carpoolbookingDAO = new CarPoolBookingDAOImpl ();
-           List<CarPoolBooking> carpoolbookingList= carpoolbookingDAO.getAllCarPoolBooking();
-            System.out.println("No of Records " + carpoolbookingList.size());
-            if(carpoolbookingList.size()>0){
-                request.setAttribute("carpoolbookingList", carpoolbookingList);
-                RequestDispatcher rd = request.getRequestDispatcher("carpoolbookinglist.jsp");
-                rd.forward(request, response);
-        }
+             int carpoolrouteID;
+           
+            String action = request.getParameter("action");
+            
+            carpoolrouteID = Integer.parseInt(request.getParameter("carpoolrouteID").trim());
+            System.out.println("CarPoolRoute");
+            CarPoolRouteDAO carpoolrouteDAO = new CarPoolRouteDAOImpl();
+            int count = 0;
+            if(action.equals("Save Changes")){
+            int passengerCapacity;
+            int price;
+            
+               passengerCapacity =Integer.parseInt(request.getParameter("passengerCapacity"));
+               price =Integer.parseInt(request.getParameter("price"));
+              count = carpoolrouteDAO.updateCarPoolRoute(carpoolrouteID,new CarPoolRoute(passengerCapacity,price));  
+            }
+            else if(action.equals("Delete")){
+            }
+             RequestDispatcher rd = null;
+            if(count>0){
+               rd = request.getRequestDispatcher("CarPoolRouteListServlet.view");
+            }
+            else{
+                rd = request.getRequestDispatcher("carpoolroutelist.jsp?carpoolrouteID="+carpoolrouteID);
+            }
+            rd.include(request,response);
         }
     }
 

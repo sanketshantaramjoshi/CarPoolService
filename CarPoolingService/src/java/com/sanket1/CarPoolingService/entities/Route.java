@@ -28,6 +28,10 @@ public class Route {
         this.Distance = Distance;
     }
 
+    public Route() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public void setRouteID(int routeID) {
         this.routeID = routeID;
     }

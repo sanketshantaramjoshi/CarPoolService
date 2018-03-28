@@ -95,7 +95,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="date">Date</label>  
   <div class="col-md-2">
-  <input id="date" name="customerDateOfBirth" type="text" placeholder="DD/MM/YYYY" class="form-control input-md" required="">
+  <input id="date" name="customerDateOfBirth" type="text" placeholder="MM/DD/YYYY" class="form-control input-md" required="">
     
   </div>
 </div>

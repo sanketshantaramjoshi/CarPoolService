@@ -4,16 +4,30 @@
     Author     : sanket
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-          <body>
-        <%@include file="header.jsp" %>
+
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+        <%@page contentType="text/html" pageEncoding="UTF-8"%>
+         <%@include file="header.jsp" %>
+         <br><br><br><br>
+          <style>
+table, td, th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    padding: 15px;
+}
+</style>
+
+    
+        <div class ="container">
+        <table style="width: 100%">
+           
+        </table>
        <h2>List of Car Pool Booking</h2>
 <table border="1">
     <thead >
@@ -28,9 +42,9 @@
     <th>Number of Passenger</th>
     </thead>
     <tbody>
-        <%--<c:if test="not employeeList equals  null" var="emp">--%>
+       
         
-        <c:forEach  var="carpoolbooking" items="${carpoolbookinglist}">
+        <c:forEach  var="carpoolbooking" items="${carpoolbookingList}">
         <tr>
             <td><c:out value="${carpoolbooking.invoiceID}"/></td>
             <td><c:out value="${carpoolbooking.invoiceDate}"/></td>
@@ -41,19 +55,17 @@
             <td><c:out value="${carpoolbooking.customerID}"/></td>
             <td><c:out value="${carpoolbooking.routeID}"/></td>
             <td><c:out value="${carpoolbooking.numberofPassenger}"/></td>
-            <td>Details</td>
-            <td>Edit</td>
-            <td>Delete</td>
-            
+             <td><a href="EditCarPoolBooking.jsp?carpoolbookingID=${carpoolbooking.carpoolbookingID}">DETAILS</a></td>
         </tr>
         </c:forEach>
-        <%--</c:if>--%>
-        <c:if test="carpoolbookingList equals  null" var="carpoolbooking">
-            <%out.println("No record");%>
+    
+       <c:if test="${empty carpoolbookingList}" var="cpbl">
+             <%out.println("No record");%>  
         </c:if>
     </tbody>
     
 </table>
-    </body>
-    </body>
-</html>
+        </div>
+    
+        <br><br><br><br>
+   <%@include file="Footer.jsp" %>
